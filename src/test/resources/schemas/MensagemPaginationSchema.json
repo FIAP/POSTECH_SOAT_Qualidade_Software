@@ -1,0 +1,112 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "content": {
+      "type": "array"
+    },
+    "pageable": {
+      "type": "object",
+      "properties": {
+        "sort": {
+          "type": "object",
+          "properties": {
+            "empty": {
+              "type": "boolean"
+            },
+            "unsorted": {
+              "type": "boolean"
+            },
+            "sorted": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "empty",
+            "unsorted",
+            "sorted"
+          ]
+        },
+        "offset": {
+          "type": "integer"
+        },
+        "pageNumber": {
+          "type": "integer"
+        },
+        "pageSize": {
+          "type": "integer"
+        },
+        "paged": {
+          "type": "boolean"
+        },
+        "unpaged": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "sort",
+        "offset",
+        "pageNumber",
+        "pageSize",
+        "paged",
+        "unpaged"
+      ]
+    },
+    "last": {
+      "type": "boolean"
+    },
+    "totalPages": {
+      "type": "integer"
+    },
+    "totalElements": {
+      "type": "integer"
+    },
+    "sort": {
+      "type": "object",
+      "properties": {
+        "empty": {
+          "type": "boolean"
+        },
+        "unsorted": {
+          "type": "boolean"
+        },
+        "sorted": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "empty",
+        "unsorted",
+        "sorted"
+      ]
+    },
+    "first": {
+      "type": "boolean"
+    },
+    "number": {
+      "type": "integer"
+    },
+    "size": {
+      "type": "integer"
+    },
+    "numberOfElements": {
+      "type": "integer"
+    },
+    "empty": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "content",
+    "pageable",
+    "last",
+    "totalPages",
+    "totalElements",
+    "sort",
+    "first",
+    "number",
+    "size",
+    "numberOfElements",
+    "empty"
+  ]
+}

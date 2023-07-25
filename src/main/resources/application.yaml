@@ -1,0 +1,43 @@
+server:
+  port: 8080
+  shutdown: graceful
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+#    url: jdbc:h2:file:./target/h2.db;AUTO_SERVER=true
+#    url: jdbc:h2:tcp://localhost:9092/mem:testdb
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+  jpa:
+    database: h2
+    database-platform: org.hibernate.dialect.H2Dialect
+    # Apenas para teste
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create-drop
+  sql:
+    init:
+      mode: always
+  lifecycle:
+      timeout-per-shutdown-phase: "5s"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,shutdown
+  endpoint:
+    shutdown:
+      enabled: true
+
+
+logging:
+  level:
+    root: INFO
+    org.example: INFO
+    org.springframework: INFO

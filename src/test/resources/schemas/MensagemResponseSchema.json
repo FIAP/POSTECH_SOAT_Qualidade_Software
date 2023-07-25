@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Mensagem Response",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "usuario": {
+      "type": "string"
+    },
+    "conteudo": {
+      "type": "string"
+    },
+    "dataCriacao": {
+      "type": "string"
+    },
+    "dataAlteracao": {
+      "type": "string"
+    },
+    "gostei": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "id",
+    "usuario",
+    "conteudo",
+    "dataCriacao",
+    "gostei"
+  ]
+}
+

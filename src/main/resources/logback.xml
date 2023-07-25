@@ -1,0 +1,45 @@
+<configuration>
+
+  <!-- Define o padrão de nomeação do arquivo de log -->
+  <property name="LOG_FILE" value="application.log" />
+  <!-- Define o padrão de nomeação do arquivo de log para erros -->
+  <property name="ERROR_LOG_FILE" value="application-error.log" />
+
+  <!-- Define a saída do log para o console -->
+  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%date %highlight(%-5level) %cyan([%thread]) %logger{35} - %msg %n</pattern>
+    </encoder>
+  </appender>
+
+  <!-- Define a saída do log para um arquivo -->
+  <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+    <file>${LOG_FILE}</file>
+    <encoder>
+      <pattern>%date %-5level [%thread] %logger{35} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <!-- Define a saída do log de erros para um arquivo separado -->
+  <appender name="ERROR_FILE" class="ch.qos.logback.core.FileAppender">
+    <file>${ERROR_LOG_FILE}</file>
+    <encoder>
+      <pattern>%date %-5level [%thread] %logger{35} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <!-- Define o nível de log para o console -->
+  <root level="INFO">
+    <appender-ref ref="CONSOLE" />
+  </root>
+
+  <!-- Define o nível de log para o arquivo -->
+  <logger name="org.example" level="DEBUG">
+    <appender-ref ref="FILE" />
+  </logger>
+
+  <!-- Define o nível de log para erros no arquivo de log separado -->
+  <logger name="org.example" level="ERROR">
+    <appender-ref ref="ERROR_FILE" />
+  </logger>
+</configuration>
